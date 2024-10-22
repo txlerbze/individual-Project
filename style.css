@@ -1,0 +1,76 @@
+/* General Box Sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Basic Body Styling */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header Styling */
+header {
+  background-color: #6930C3;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Navigation Section */
+nav {
+  float: left;
+  width: 15%;
+  background: #FFFFFF;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Article Section */
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #5390D9;
+}
+
+/* Clearing Floats */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #5E60CE;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Columns Layout */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear Floats After Columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
