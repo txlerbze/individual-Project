@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FoC - UNICODE</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        section {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .input-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 250px;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            width: 700px;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #008CBA;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <h2>Project 1: UNICODE</h2>
+    <hr>
+
+    <div class="input-container">
+        <p>Please input a UNICODE number:</p>
+        <input id="numb" type="text" placeholder="Enter UNICODE value (e.g., 263A)">
+        <br>
+        <button type="button" onclick="myFunction()">Submit</button>
+    </div>
+
+    <table>
+        <tr>
+            <th>
+                <p id="demo"></p>
+            </th>
+        </tr>
+    </table>
+
+    <div class="images-container">
+        <img src="uni1.jpg" alt="Unicode Image 1">
+        <img src="uni3.jpg" alt="Unicode Image 2">
+        <img src="uni4.jpg" alt="Unicode Image 3">
+    </div>
+
+</section>
+
+<a href="project.html">Back to Projects</a>
+
+<footer>
+    <p>&copy; Powered by UB</p>
+</footer>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("numb").value;
+        var unicode = "&#x" + x;
+        document.getElementById("demo").innerHTML = unicode;
+    }
+</script>
+
+</body>
+</html>

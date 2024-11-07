@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Project AND Logic Gate</title>
+  <style>
+    /* Center content and apply basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Header styling */
+    h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    /* Button styling */
+    button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+    }
+
+    /* Image styling */
+    img {
+      display: block;
+      margin-top: 20px;
+      width: 200px; /* Adjust size as needed */
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    /* Back link styling */
+    .back-link {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #008CBA;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+      color: #005f7f;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Final Project: AND Logic Gate</h2>
+  <p>This is an animation of an AND Logic Gate</p>
+
+  <!-- AND Gate Buttons -->
+  <button onclick="document.getElementById('myImage').src='and2off.png'">0 AND 0</button>
+  <button onclick="document.getElementById('myImage').src='andoffon.png'">0 AND 1</button>
+  <button onclick="document.getElementById('myImage').src='andonoff.png'">1 AND 0</button>
+  <button onclick="document.getElementById('myImage').src='and2on.png'">1 AND 1</button>
+
+  <!-- AND Gate Image -->
+  <img id="myImage" src="and2off.png" alt="AND Gate Output">
+
+  <!-- Back to Home Link -->
+  <a href="project.html" class="back-link">Back to projects</a>
+
+</body>
+</html>

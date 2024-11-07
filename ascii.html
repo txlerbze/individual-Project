@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoC</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    img {
+      float: left;
+      padding-right: 40px;
+      padding-left: 40px;
+      padding-bottom: 40px;
+      max-width: 100%; /* Ensure image responsiveness */
+      height: auto;
+    }
+
+    input[type="number"] {
+      padding: 8px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 200px;
+    }
+
+    button {
+      background-color: #4CAF50; /* Green */
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* Section styling */
+    section {
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+    }
+
+    a {
+      color: #008CBA;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #005f7f;
+    }
+  </style>
+</head>
+<body>
+
+<section>
+  <h2>Project 1: ASCII</h2>
+  <hr>
+
+  <p><img src="ascii.png" alt="ASCII Chart"></p>
+
+  <p>Enter any number from 0 to 127:</p>
+  <input id="inputdec" type="number" min="0" max="127" placeholder="Enter number">
+
+  <button onclick="decToASCII()">Submit</button>
+
+  <p>ASCII Value:</p>
+  <p id="demo"></p>
+
+  <script>
+    function decToASCII() {
+      const x = document.getElementById("inputdec").value;
+      const res = String.fromCharCode(x);
+      document.getElementById("demo").innerHTML = res;
+      console.log(res);
+    }
+  </script>
+
+</section>
+
+<a href="project.html">Back to Project</a>
+
+<footer>
+  <p>&copy; Powered by UB</p>
+</footer>
+
+</body>
+</html>
