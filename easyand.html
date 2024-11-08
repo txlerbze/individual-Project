@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Final Project AND Logic Gate</title>
+  <title>Final Project: AND Logic Gate</title>
   <style>
-    /* Center content and apply basic styling */
+    /* Basic styling for the page */
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f9;
@@ -18,35 +18,49 @@
 
     /* Header styling */
     h2 {
-      color: #333;
-      margin-bottom: 10px;
+      color: #00509e;
+      margin-bottom: 5px;
+    }
+    
+    p {
+      margin-bottom: 20px;
+      color: #555;
     }
 
     /* Button styling */
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
     button {
       background-color: #4CAF50; /* Green */
       border: none;
       color: white;
       padding: 10px 20px;
       font-size: 16px;
-      margin: 5px;
       cursor: pointer;
       border-radius: 5px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     button:hover {
       background-color: #3e8e41;
+      transform: scale(1.05);
     }
 
     /* Image styling */
     img {
-      display: block;
       margin-top: 20px;
-      width: 200px; /* Adjust size as needed */
+      width: 200px;
       height: auto;
-      border: 1px solid #ddd;
+      border: 2px solid #ddd;
       border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     /* Back link styling */
@@ -55,24 +69,28 @@
       font-weight: bold;
       color: #008CBA;
       text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
     }
 
     .back-link:hover {
-      text-decoration: underline;
       color: #005f7f;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
   <h2>Final Project: AND Logic Gate</h2>
-  <p>This is an animation of an AND Logic Gate</p>
+  <p>Click on the buttons below to see the output of an AND logic gate for each input combination.</p>
 
   <!-- AND Gate Buttons -->
-  <button onclick="document.getElementById('myImage').src='and2off.png'">0 AND 0</button>
-  <button onclick="document.getElementById('myImage').src='andoffon.png'">0 AND 1</button>
-  <button onclick="document.getElementById('myImage').src='andonoff.png'">1 AND 0</button>
-  <button onclick="document.getElementById('myImage').src='and2on.png'">1 AND 1</button>
+  <div class="button-group">
+    <button onclick="document.getElementById('myImage').src='and2off.png'">0 AND 0</button>
+    <button onclick="document.getElementById('myImage').src='andoffon.png'">0 AND 1</button>
+    <button onclick="document.getElementById('myImage').src='andonoff.png'">1 AND 0</button>
+    <button onclick="document.getElementById('myImage').src='and2on.png'">1 AND 1</button>
+  </div>
 
   <!-- AND Gate Image -->
   <img id="myImage" src="and2off.png" alt="AND Gate Output">
