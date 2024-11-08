@@ -10,7 +10,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: #f3f4f6;
+            color: #333;
             padding: 20px;
+        }
+
+        h2 {
+            color: #00509e;
+            margin-bottom: 20px;
         }
 
         .button {
@@ -20,6 +27,7 @@
             padding: 15px 32px;
             font-size: 16px;
             cursor: pointer;
+            border-radius: 5px;
             transition: background-color 0.3s ease;
             margin-bottom: 20px;
         }
@@ -28,9 +36,10 @@
             background-color: #005f7a;
         }
 
-        table {
-            width: 100%;
-            text-align: center;
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
             margin-top: 20px;
         }
 
@@ -38,6 +47,16 @@
             cursor: pointer;
             width: 100px;
             margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-button:hover {
+            transform: scale(1.1);
+        }
+
+        #andGate {
+            width: 150px;
+            transition: opacity 0.3s ease;
         }
 
         .back-link {
@@ -45,6 +64,7 @@
             color: #008CBA;
             font-weight: bold;
             margin-top: 20px;
+            transition: color 0.3s ease;
         }
 
         .back-link:hover {
@@ -53,20 +73,24 @@
     </style>
 </head>
 <body>
+    <h2>AND Gate Simulation</h2>
+    <p>Toggle the inputs and click "Run" to see the AND gate output.</p>
+    
     <button class="button" onclick="and()">Run</button>
 
-    <table>
-        <tr>
-            <td>
-                <img src="button-off-xxl.png" id="toggleImage" class="image-button" onclick="toggleImage(); toggleInputOne();" alt="Toggle Button 1">
-                <br>
-                <img src="button-off-xxl.png" id="toggleImage2" class="image-button" onclick="toggleImage2(); toggleInputTwo();" alt="Toggle Button 2">
-            </td>
-            <td>
-                <img id="andGate" src="and2off.png" alt="AND Gate">
-            </td>
-        </tr>
-    </table>
+    <div class="container">
+        <div>
+            <h3>Inputs</h3>
+            <img src="button-off-xxl.png" id="toggleImage" class="image-button" onclick="toggleImage(); toggleInputOne();" alt="Toggle Button 1">
+            <br>
+            <img src="button-off-xxl.png" id="toggleImage2" class="image-button" onclick="toggleImage2(); toggleInputTwo();" alt="Toggle Button 2">
+        </div>
+        
+        <div>
+            <h3>Output</h3>
+            <img id="andGate" src="and2off.png" alt="AND Gate Output">
+        </div>
+    </div>
 
     <a href="project.html" class="back-link">Back to projects</a>
 
@@ -76,20 +100,12 @@
 
         function toggleImage() {
             var imgElement = document.getElementById('toggleImage');
-            if (imgElement.src.includes("button-off-xxl.png")) {
-                imgElement.src = "button-on-xxl.png";
-            } else {
-                imgElement.src = "button-off-xxl.png";
-            }
+            imgElement.src = imgElement.src.includes("button-off-xxl.png") ? "button-on-xxl.png" : "button-off-xxl.png";
         }
 
         function toggleImage2() {
             var imgElement = document.getElementById('toggleImage2');
-            if (imgElement.src.includes("button-off-xxl.png")) {
-                imgElement.src = "button-on-xxl.png";
-            } else {
-                imgElement.src = "button-off-xxl.png";
-            }
+            imgElement.src = imgElement.src.includes("button-off-xxl.png") ? "button-on-xxl.png" : "button-off-xxl.png";
         }
 
         function toggleInputOne() { 
@@ -101,14 +117,15 @@
         }
 
         function and() {
+            const andGateImage = document.getElementById('andGate');
             if (inputOneIsOn && inputTwoIsOn) {
-                document.getElementById('andGate').src = 'and2on.png';
+                andGateImage.src = 'and2on.png';
             } else if (!inputOneIsOn && inputTwoIsOn) {
-                document.getElementById('andGate').src = 'andoffon.png';
+                andGateImage.src = 'andoffon.png';
             } else if (inputOneIsOn && !inputTwoIsOn) {
-                document.getElementById('andGate').src = 'andonoff.png';
+                andGateImage.src = 'andonoff.png';
             } else {
-                document.getElementById('andGate').src = 'and2off.png';
+                andGateImage.src = 'and2off.png';
             }
 
             console.log('Input one is on:', inputOneIsOn);
