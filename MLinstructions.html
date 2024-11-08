@@ -1,54 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ML</title>
-	<style>
-img {
-  float: right;
-}
-.button {
-  background-color: #008CBA; /* Blue */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Machine Language</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .button {
+            background-color: #008CBA;
+            color: white;
+            padding: 15px 32px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px 0;
+            cursor: pointer;
+            width: 100%;
+            max-width: 200px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #007bb5;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        footer {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
 
-
 <h3>A Simple Interactive Machine Language</h3>
 
-<p>
+<div class="button-container">
+    <button class="button" onclick="displayImages('ML1.png', 'EI1.png')">156C</button>
+    <button class="button" onclick="displayImages('ML2.png', 'EI2.png')">166D</button>
+    <button class="button" onclick="displayImages('ML3.png', 'EI3.png')">5056</button>
+    <button class="button" onclick="displayImages('ML4.png', 'EI4.png')">306E</button>
+    <button class="button" onclick="displayImages('ML5.png', 'EI5.png')">C000</button>
+</div>
 
-<img id="MLinstrucitons" src="MLblank.png" >
+<div class="image-container">
+    <img id="MLinstrucitons" src="MLblank.png" alt="Machine Language Instruction" aria-label="Machine Language Instruction">
+    <img id="Englishinstrucitons" src="" alt="English Instruction" aria-label="English Instruction">
+</div>
 
+<footer>
+    <a href="index.html">Back to Home</a>
+</footer>
 
-<button class="button" onclick="document.getElementById('MLinstrucitons').src='ML1.png'; document.getElementById('Englishinstrucitons').src='EI1.png'">156C</button><br>
-<button class="button" onclick="document.getElementById('MLinstrucitons').src='ML2.png'; document.getElementById('Englishinstrucitons').src='EI2.png'">166D</button><br>
-<button class="button" onclick="document.getElementById('MLinstrucitons').src='ML3.png'; document.getElementById('Englishinstrucitons').src='EI3.png'">5056</button><br>
-<button class="button" onclick="document.getElementById('MLinstrucitons').src='ML4.png'; document.getElementById('Englishinstrucitons').src='EI4.png'">306E</button><br>
-<button class="button" onclick="document.getElementById('MLinstrucitons').src='ML5.png'; document.getElementById('Englishinstrucitons').src='EI5.png'">C000</button><br>
-<img id="Englishinstrucitons" src="" >
-
-
-
-
-
-<a href="index.html">Back to Home</a></h3>
-
-</p>
-
-
-
-
-
+<script>
+    function displayImages(mlImage, eiImage) {
+        document.getElementById('MLinstrucitons').src = mlImage;
+        document.getElementById('Englishinstrucitons').src = eiImage;
+    }
+</script>
 
 </body>
 </html>
