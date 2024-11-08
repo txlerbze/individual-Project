@@ -3,22 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FoC</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Binary to Hexadecimal Converter</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <style>
-    /* Image styling */
     img {
       float: left;
-      padding-right: 40px;
-      padding-left: 40px;
-      padding-bottom: 40px;
-      width: 250px; /* Adjust image size */
+      padding: 0 40px 40px 40px;
+      width: 250px;
       height: auto;
     }
 
-    /* Styling for the input and button */
-    input[type="number"] {
+    input[type="text"] {
       padding: 8px;
       margin-top: 10px;
       font-size: 16px;
@@ -28,7 +23,7 @@
     }
 
     button {
-      background-color: #4CAF50; /* Green */
+      background-color: #4CAF50;
       color: white;
       padding: 10px 20px;
       font-size: 16px;
@@ -42,16 +37,15 @@
       background-color: #45a049;
     }
 
-    /* Section styling */
     section {
       padding: 20px;
       margin-top: 20px;
       background-color: #f9f9f9;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
-    /* Footer styling */
     footer {
       text-align: center;
       margin-top: 30px;
@@ -67,30 +61,38 @@
       text-decoration: underline;
       color: #005f7f;
     }
-
   </style>
 </head>
 <body>
 
-<section>
-  <h2>Project 1: Binary to Hexadecimal</h2>
+<section aria-labelledby="project-title">
+  <h2 id="project-title">Binary to Hexadecimal Converter</h2>
   <hr>
   
-  <p><img src="bintohex.jpg" alt="Binary to Hexadecimal"></p>
+  <img src="bintohex.jpg" alt="Binary to Hexadecimal Diagram">
+
+  <p>Enter a 4-digit binary number (e.g., 1011):</p>
+  <label for="inputBin" class="sr-only">Binary Input</label>
+  <input type="text" id="inputBin" maxlength="4" placeholder="Binary (0000 - 1111)" aria-describedby="binary-help">
+  <small id="binary-help" class="form-text text-muted">Must be a 4-digit binary number.</small>
   
-  <p>Enter any 4-digit binary number:</p>
-  <input type="number" id="inputBin" value="" min="0" max="1111" placeholder="e.g., 1011">
-  
-  <button onclick="binToHex()">Submit</button>
+  <button onclick="binToHex()">Convert</button>
 
   <p>Hexadecimal Value:</p>
-  <p id="demo"></p>
+  <p id="demo" aria-live="polite"></p>
 
   <script>
     function binToHex() {
-      var x = document.getElementById("inputBin").value;
-      var hexOut = parseInt(x, 2).toString(16).toUpperCase();
-      document.getElementById("demo").innerHTML = hexOut;
+      const input = document.getElementById("inputBin").value;
+      const binaryRegex = /^[01]{4}$/;
+      const outputElement = document.getElementById("demo");
+
+      if (binaryRegex.test(input)) {
+        const hexOut = parseInt(input, 2).toString(16).toUpperCase();
+        outputElement.innerHTML = `0x${hexOut}`;
+      } else {
+        outputElement.innerHTML = "Please enter a valid 4-digit binary number.";
+      }
     }
   </script>
 
