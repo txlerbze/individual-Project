@@ -1,18 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Project: NOT Logic Gate</title>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background-color: #f3f4f6;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    h2 {
+        color: #00509e;
+        margin-bottom: 10px;
+    }
+    
+    p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .button-container {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #00509e;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+        background-color: #003e7d;
+    }
+    
+    img {
+        width: 100px;
+        transition: transform 0.3s ease;
+    }
+    
+    img:hover {
+        transform: scale(1.1);
+    }
+</style>
+</head>
 <body>
 
-<h2> Final Project Not Logic Gate</h2>
-
+<h2>Final Project: NOT Logic Gate</h2>
 <p>This is an animation of a NOT Logic Gate</p>
 
+<div class="button-container">
+    <button onclick="document.getElementById('myImage').src='off.png'">Off</button>
+    <button onclick="document.getElementById('myImage').src='on.png'">On</button>
+</div>
 
-<button onclick="document.getElementById('myImage').src='off.png'">Off</button>
-
-<button onclick="document.getElementById('myImage').src='on.png'">On</button>
-
-<img id="myImage" src="off.png" style="width:100px">
-
+<img id="myImage" src="off.png" alt="Logic Gate State">
 
 </body>
 </html>
