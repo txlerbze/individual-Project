@@ -3,16 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FoC</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>ASCII Converter</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <style>
     img {
       float: left;
-      padding-right: 40px;
-      padding-left: 40px;
-      padding-bottom: 40px;
-      max-width: 100%; /* Ensure image responsiveness */
+      padding: 0 40px 40px 40px;
+      max-width: 100%;
       height: auto;
     }
 
@@ -26,7 +23,7 @@
     }
 
     button {
-      background-color: #4CAF50; /* Green */
+      background-color: #4CAF50;
       color: white;
       padding: 10px 20px;
       font-size: 16px;
@@ -40,13 +37,13 @@
       background-color: #45a049;
     }
 
-    /* Section styling */
     section {
       padding: 20px;
       margin-top: 20px;
       background-color: #f9f9f9;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
     footer {
@@ -74,26 +71,34 @@
 </head>
 <body>
 
-<section>
-  <h2>Project 1: ASCII</h2>
+<section aria-labelledby="project-title">
+  <h2 id="project-title">Project 1: ASCII Converter</h2>
   <hr>
 
-  <p><img src="ascii.png" alt="ASCII Chart"></p>
+  <img src="ascii.png" alt="ASCII Chart">
 
-  <p>Enter any number from 0 to 127:</p>
-  <input id="inputdec" type="number" min="0" max="127" placeholder="Enter number">
+  <p>Enter a number from 0 to 127:</p>
+  <label for="inputdec" class="sr-only">Decimal Input</label>
+  <input id="inputdec" type="number" min="0" max="127" placeholder="Enter number" aria-describedby="decimal-help">
+  <small id="decimal-help" class="form-text text-muted">Enter a valid decimal number between 0 and 127.</small>
 
-  <button onclick="decToASCII()">Submit</button>
+  <button onclick="decToASCII()">Convert</button>
 
   <p>ASCII Value:</p>
-  <p id="demo"></p>
+  <p id="demo" aria-live="polite"></p>
 
   <script>
     function decToASCII() {
-      const x = document.getElementById("inputdec").value;
-      const res = String.fromCharCode(x);
-      document.getElementById("demo").innerHTML = res;
-      console.log(res);
+      const inputElement = document.getElementById("inputdec");
+      const inputVal = inputElement.value;
+      const outputElement = document.getElementById("demo");
+
+      if (inputVal >= 0 && inputVal <= 127) {
+        const asciiChar = String.fromCharCode(inputVal);
+        outputElement.innerHTML = `ASCII Character: ${asciiChar}`;
+      } else {
+        outputElement.innerHTML = "Please enter a number between 0 and 127.";
+      }
     }
   </script>
 
